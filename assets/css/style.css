@@ -67,7 +67,7 @@ h6 {
 }
 
 body {
-  background-image: url(assets/images/bg-barilla.jpg);
+  background-image: url('../images/bg-barilla.jpg');
   background-position: top right;
   background-repeat: no-repeat;
   background-size: cover;
