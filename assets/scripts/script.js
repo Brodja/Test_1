@@ -188,7 +188,7 @@ function isCheck(name) {
 }
 
 window.onload = function () {
-  history.pushState(null,null, 'newAdress');
+  history.pushState(null,null, '');
   window.setTimeout(function () {
     window.addEventListener(
       "popstate",
