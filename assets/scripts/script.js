@@ -72,7 +72,7 @@ function check_text(id) {
       document.querySelector("#label_email").style.top = "0px"
       document.querySelector("#label_email").style.fontSize = '12px';
     }
-    else if (!validateEmail(item.value)) {
+     if (!validateEmail(item.value)) {
       item.style.borderBottomColor = "#c71414";
       item.style.borderBottomWidth = "2px";
       document.querySelector(".status_email").style.display = "block";
@@ -109,7 +109,6 @@ function check_text(id) {
         item.style.backgroundColor = "transparent";
       }
     } else if ((id = "yearofbirth")) {
-      console.log(item);
       if (item.value != "") {
         item.style.borderBottomWidth = "1px";
         item.style.borderBottomColor = "#677073";
