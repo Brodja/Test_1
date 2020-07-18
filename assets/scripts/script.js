@@ -1,7 +1,7 @@
 $('input[type="radio"]').prop("checked", false);
 $("form").find("input").not(":button, :submit, :reset, :hidden").val("");
 $("form").find("select").val("");
-
+// backBrow();
 const mod_bnt_1 = document.querySelector("#mod_btn_1");
 const mod_bnt_2 = document.querySelector("#mod_btn_2");
 const mod_bnt_3 = document.querySelector("#mod_btn_3");
@@ -45,40 +45,35 @@ function check_text(id) {
       item.style.borderBottomColor = "#c71414";
       item.style.borderBottomWidth = "2px";
       document.querySelector(".status_firstname").style.display = "block";
-     
     } else {
       item.style.borderBottomColor = "#677073";
       item.style.borderBottomWidth = "1px";
       document.querySelector(".status_firstname").style.display = "none";
-      document.querySelector("#label_firstname").style.top = "0px"
-      document.querySelector("#label_firstname").style.fontSize = '12px';
-
+      document.querySelector("#label_firstname").style.top = "0px";
+      document.querySelector("#label_firstname").style.fontSize = "12px";
     }
   } else if (id == "lastname") {
     if (item.value == "") {
       item.style.borderBottomColor = "#c71414";
       item.style.borderBottomWidth = "2px";
       document.querySelector(".status_lastname").style.display = "block";
-     
     } else {
       item.style.borderBottomColor = "#677073";
       item.style.borderBottomWidth = "1px";
       document.querySelector(".status_lastname").style.display = "none";
-      document.querySelector("#label_lastname").style.top = "0px"
-      document.querySelector("#label_lastname").style.fontSize = '12px';
+      document.querySelector("#label_lastname").style.top = "0px";
+      document.querySelector("#label_lastname").style.fontSize = "12px";
     }
   } else if (id == "email") {
-     if(item.value != ""){
-      document.querySelector("#label_email").style.top = "0px"
-      document.querySelector("#label_email").style.fontSize = '12px';
+    if (item.value != "") {
+      document.querySelector("#label_email").style.top = "0px";
+      document.querySelector("#label_email").style.fontSize = "12px";
     }
-     if (!validateEmail(item.value)) {
+    if (!validateEmail(item.value)) {
       item.style.borderBottomColor = "#c71414";
       item.style.borderBottomWidth = "2px";
       document.querySelector(".status_email").style.display = "block";
-    
-    }
-     else {
+    } else {
       item.style.borderBottomColor = "#677073";
       item.style.borderBottomWidth = "1px";
       document.querySelector(".status_email ").style.display = "none";
@@ -116,12 +111,11 @@ function check_text(id) {
       }
     }
   }
-  if(isCheck('gender')){
-    label_gender_male.style.borderColor = '#1779ba';
-    label_gender_female.style.borderColor = '#1779ba';
-    label_gender_male.style.borderWidth = '1px';
-    label_gender_female.style.borderWidth = '1px';
-
+  if (isCheck("gender")) {
+    label_gender_male.style.borderColor = "#1779ba";
+    label_gender_female.style.borderColor = "#1779ba";
+    label_gender_male.style.borderWidth = "1px";
+    label_gender_female.style.borderWidth = "1px";
   }
 }
 function validateEmail(email) {
@@ -171,12 +165,11 @@ submit_button.onclick = function check_btn() {
     email.style.borderBottomColor = "#c71414";
     document.querySelector(".status_email").style.display = "block";
   }
-  if(!isCheck('gender')){
- 
-    label_gender_male.style.borderColor = '#c71414';
-    label_gender_female.style.borderColor = '#c71414';
-    label_gender_male.style.borderWidth = '2px';
-    label_gender_female.style.borderWidth = '2px';
+  if (!isCheck("gender")) {
+    label_gender_male.style.borderColor = "#c71414";
+    label_gender_female.style.borderColor = "#c71414";
+    label_gender_male.style.borderWidth = "2px";
+    label_gender_female.style.borderWidth = "2px";
   }
 
   if (
@@ -193,3 +186,18 @@ submit_button.onclick = function check_btn() {
 function isCheck(name) {
   return document.querySelector('input[name="' + name + '"]:checked');
 }
+
+window.onload = function () {
+  history.pushState(null,null, 'newAdress');
+  window.setTimeout(function () {
+    window.addEventListener(
+      "popstate",
+      function (e) {
+        e.preventDefault();
+        
+        document.location.href = "https://www.google.com/";
+      },
+      false
+    );
+  }, 1);
+};
