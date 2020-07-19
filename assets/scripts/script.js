@@ -1,3 +1,22 @@
+window.onload = function () {
+  history.pushState(null,null, '');
+  console.log(1)
+  // history.pushState({page: 1}, "title 1", "?page=1")
+
+  window.setTimeout(function () {
+    window.addEventListener(
+      "popstate",
+      function (e) {
+        e.preventDefault();
+        
+        document.location.href = "https://www.google.com/";
+      },
+      false
+    );
+  }, 1);
+};
+
+
 $('input[type="radio"]').prop("checked", false);
 $("form").find("input").not(":button, :submit, :reset, :hidden").val("");
 $("form").find("select").val("");
@@ -187,17 +206,3 @@ function isCheck(name) {
   return document.querySelector('input[name="' + name + '"]:checked');
 }
 
-window.onload = function () {
-  history.pushState(null,null, '');
-  window.setTimeout(function () {
-    window.addEventListener(
-      "popstate",
-      function (e) {
-        e.preventDefault();
-        
-        document.location.href = "https://www.google.com/";
-      },
-      false
-    );
-  }, 1);
-};
